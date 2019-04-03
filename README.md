@@ -4,6 +4,12 @@ Demonstrações da disciplina de Programação para Web.
 
 * [exemplo-01](exemplo-01/README.md) - Primeira aplicação web.
 
+Para fazer `clone` do repositório:
+
+```sh
+git clone https://github.com/walisonmoreira/inf0169-pw-2019-1-a
+```
+
 ## Links
 
 * [Curso de Git](https://www.youtube.com/playlist?list=PLQCmSnNFVYnRdgxOC_ufH58NxlmM6VYd1) - Do professor do Rodrigo Branas.
