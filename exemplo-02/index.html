@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo 02</title>
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <!-- Internal style sheet -->
+    <style>
+        h1, div {
+            background-color: yellow;
+        }
+        .destaque {
+            border:solid 1px;
+        }
+        #texto-principal {
+            border:solid 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo 02</h1>
+    <h2>Aplicação web que utiliza HTML e CSS.</h2>
+    <p><b>Aqui é um texto em negrito com a tag "b" do HTML.</b></p>
+    <!-- Inline CSS. -->
+    <div style="font-weight:bold;color:red;">
+        Aqui é um texto que usa Inline CSS.
+        <div>Esse é um texto dentro de outro texto.</div>
+    </div>
+    <!-- Internal style sheet - class selector -->
+    <div class="destaque">
+      Aqui é um texto que usa Internal CSS com seletor de "class".
+    </div>
+    <!-- Internal style sheet - id selector -->
+    <div id="texto-principal">
+        Aqui é um texto que usa Internal CSS com seletor de "id".
+    </div>      
+</body>
+</html>

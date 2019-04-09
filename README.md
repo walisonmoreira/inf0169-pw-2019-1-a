@@ -4,6 +4,8 @@ Demonstrações da disciplina de Programação para Web.
 
 * [exemplo-01](exemplo-01/README.md) - Primeira aplicação web.
 
+* [exemplo-02](exemplo-02/README.md) - Aplicação web com HTML e CSS.
+
 Para fazer `clone` do repositório:
 
 ```sh
