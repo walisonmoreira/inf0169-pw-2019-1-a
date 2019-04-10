@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo 03</title>
+    <!-- "Importando o script externo para o html." -->
+    <script src="script.js"></script>
+    <script>
+        //alert('Esse script é processado pelo navegador antes do "<body>".');
+
+        function clicaAqui() {
+            alert('O mouse clicou aqui!');
+        }
+    </script>
+
+</head>
+<body>
+    <h1 onclick="alert('O mouse clicou aqui!')">Exemplo 03</h1>
+    <h2>Aplicação web com JavaScript.</h2>
+    <hr>
+    <button type="button" onclick="clicaAqui()">Clica aqui</button>
+    <hr>
+    <h2>Maior ou Menor?</h2>
+    Idade: <input id="idade" type="text"> <button type="button" onclick="calcularIdade()">Calcular</button>
+    <hr>
+    <script>
+        //alert("Essa é a última instrução processada pelo navegador.");
+    </script>
+</body>
+</html>
