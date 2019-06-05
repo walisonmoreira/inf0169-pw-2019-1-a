@@ -1,13 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <%@ include file = "header.jsp" %>
     <title>Pet Shop</title>
     <script>
         function entrar() {
-            location.href = 'inicio.html';
+            location.href = 'inicio.jsp';
         }
     </script>
 </head>
