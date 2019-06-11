@@ -2,6 +2,14 @@
 
 Exemplo de uma aplicação Java/Web.
 
+### Para iniciar o Derby
+
+`mvn exec:java@derby-start`
+
+### Para parar o Derby
+
+`mvn exec:java@derby-stop`
+
 ## Executar
 
 ```sh

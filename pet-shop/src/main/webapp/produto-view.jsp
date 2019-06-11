@@ -12,17 +12,23 @@
     <div class="container">
         <form>
             <div class="form-row">
+                <div class="col-1">
+                    <input name="codigo" type="text" class="form-control" placeholder="Cod.">
+                </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Produto">
+                    <input name="nome" type="text" class="form-control" placeholder="Produto">
                 </div>
                 <div class="col-2">
-                    <input type="text" class="form-control" placeholder="Preço">
+                    <input name="preco" type="text" class="form-control" placeholder="Preço">
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </div>
         </form>
+        <div>
+            ${resultado}
+        </div>
         <table class="table table-striped table-bordered table-hover table-sm">
             <thead class="thead-dark">
                 <tr>

@@ -23,7 +23,7 @@ String hotelActive = uri.endsWith("hotel.jsp") ? "active" : "";
                 <a class="nav-link" href="inicio.jsp">Início</a>
             </li>
             <li class="nav-item <%=produtoActive%>">
-                <a class="nav-link" href="produto.jsp">Produto</a>
+                <a class="nav-link" href="produto">Produto</a>
             </li>
             <li class="nav-item <%=vendaActive%>">
                 <a class="nav-link" href="venda.jsp">Venda</a>
