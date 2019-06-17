@@ -1,8 +1,9 @@
 package petshop.produto;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Responsável pela parte "Model".
@@ -32,5 +33,32 @@ public class ProdutoModel {
             e.printStackTrace();
             return "Falha ao salvar produto.";
         }
+    }
+
+    public static List listar() throws SQLException {
+        String url = "jdbc:derby://localhost:1527/db;create=true";
+        String user = "app";
+        String password = "app";
+
+        //Obtendo uma conexão com o banco de dados.
+        Connection conn = DriverManager.getConnection(url, user, password);
+
+        String sql = "select codigo, nome, preco from produto";
+
+        //Prepara uma sentença SQL.
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+
+        //Executa sentença SQL.
+        ResultSet resultSet = pstmt.executeQuery();
+
+        List resultado = new ArrayList();
+        while (resultSet.next()) {
+            HashMap registro = new HashMap();
+            registro.put("codigo", resultSet.getInt(1));
+            registro.put("nome", resultSet.getString(2));
+            registro.put("preco", resultSet.getDouble(3));
+            resultado.add(registro);
+        }
+        return resultado;
     }
 }

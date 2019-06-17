@@ -2,11 +2,11 @@
 
 Exemplo de uma aplicação Java/Web.
 
-### Para iniciar o Derby
+### Para iniciar o banco de dados Derby
 
 `mvn exec:java@derby-start`
 
-### Para parar o Derby
+### Para parar o banco de dados Derby
 
 `mvn exec:java@derby-stop`
 
@@ -14,6 +14,16 @@ Exemplo de uma aplicação Java/Web.
 
 ```sh
 mvn tomcat7:run
+```
+
+## Criação do banco de dados
+
+```sql
+create table PRODUTO (
+  CODIGO INTEGER,
+  NOME   VARCHAR(100),
+  PRECO  DECIMAL(5,2)
+);
 ```
 
 ## Preparação do projeto

@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.HashMap" %>
 <!doctype html>
 <html lang="pt-BR">
 
@@ -32,47 +34,33 @@
         <table class="table table-striped table-bordered table-hover table-sm">
             <thead class="thead-dark">
                 <tr>
+                    <th scope="col">codigo</th>
                     <th scope="col">Produto</th>
                     <th scope="col">Preço</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
-            <tr>
-                <td>
-                    <a href="#">Coleira</a>
-                </td>
-                <td>R$ 25,00</td>
-                <td>
-                    <a href="#">Excluir</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="#">Sabonete</a>
-                </td>
-                <td>R$ 3,90</td>
-                <td>
-                    <a href="#">Excluir</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="#">Guia</a>
-                </td>
-                <td>R$ 20,90</td>
-                <td>
-                    <a href="#">Excluir</a>
-                </td>
-            </tr>
-            <tr>
-                    <td>
-                        <a href="#">Shampoo</a>
-                    </td>
-                    <td>R$ 14,90</td>
-                    <td>
-                        <a href="#">Excluir</a>
-                    </td>
-                </tr>
+<%
+        List<HashMap> produtos = (List) request.getAttribute("produtos");
+        if (produtos != null) {
+          for (HashMap produto : produtos) {
+%>
+    <tr>
+    <td>
+    <a href="#"><%=produto.get("codigo")%></a>
+    </td>
+    <td>
+    <a href="#"><%=produto.get("nome")%></a>
+    </td>
+    <td>R$ <%=produto.get("preco")%></td>
+    <td>
+    <a href="#">Excluir</a>
+    </td>
+    </tr>
+<%
+        }
+          }
+%>
             </table>
     </div>
 
