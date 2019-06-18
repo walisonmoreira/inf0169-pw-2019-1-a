@@ -25,11 +25,10 @@ public class ProdutoController extends HttpServlet {
         try {
             if (operacao.equalsIgnoreCase("incluir")) {
                 incluir(req, resp);
-            } else if (operacao.equalsIgnoreCase("listar") || operacao.equalsIgnoreCase("")) {
-                listar(req, resp);
             } else if (operacao.equalsIgnoreCase("excluir")) {
                 excluir(req, resp);
             }
+            listar(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
             resultado = "Falha inesperada: " + e.getMessage();
@@ -42,7 +41,7 @@ public class ProdutoController extends HttpServlet {
 
     }
 
-    private void incluir(HttpServletRequest req, HttpServletResponse resp) {
+    private void incluir(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         String resultado = "";
         String codigoStr = req.getParameter("codigo");
         if (codigoStr != null) {
@@ -62,6 +61,9 @@ public class ProdutoController extends HttpServlet {
         req.setAttribute("produtos", produtos);
     }
 
-    private void excluir(HttpServletRequest req, HttpServletResponse resp) {
+    private void excluir(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        String codigoStr = req.getParameter("codigo");
+        Integer codigo = Integer.parseInt(codigoStr);
+        ProdutoModel.excluir(codigo);
     }
 }

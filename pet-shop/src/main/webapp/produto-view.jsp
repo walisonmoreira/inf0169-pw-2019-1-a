@@ -24,7 +24,7 @@
                     <input name="preco" type="text" class="form-control" placeholder="Preço">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" name="operacao" value="incluir" class="btn btn-primary">Salvar</button>
                 </div>
             </div>
         </form>
@@ -47,14 +47,14 @@
 %>
     <tr>
     <td>
-    <a href="#"><%=produto.get("codigo")%></a>
+    <%=produto.get("codigo")%>
     </td>
     <td>
-    <a href="#"><%=produto.get("nome")%></a>
+    <%=produto.get("nome")%>
     </td>
     <td>R$ <%=produto.get("preco")%></td>
     <td>
-    <a href="#">Excluir</a>
+    <a href="?operacao=excluir&codigo=<%=produto.get("codigo")%>">Excluir</a>
     </td>
     </tr>
 <%
