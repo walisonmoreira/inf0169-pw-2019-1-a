@@ -25,6 +25,8 @@ public class ProdutoController extends HttpServlet {
         try {
             if (operacao.equalsIgnoreCase("incluir")) {
                 incluir(req, resp);
+            } else if (operacao.equalsIgnoreCase("alterar")) {
+                alterar(req, resp);
             } else if (operacao.equalsIgnoreCase("excluir")) {
                 excluir(req, resp);
             }
@@ -50,7 +52,22 @@ public class ProdutoController extends HttpServlet {
             String precoStr = req.getParameter("preco");
             Double preco = Double.parseDouble(precoStr);
 
-            resultado = ProdutoModel.salvar(codigo, nome, preco);
+            resultado = ProdutoModel.incluir(codigo, nome, preco);
+        }
+        // Adiciona a variável na requisição para o JSP trabalhar.
+        req.setAttribute("resultado", resultado);
+    }
+
+    private void alterar(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        String resultado = "";
+        String codigoStr = req.getParameter("codigo");
+        if (codigoStr != null) {
+            Integer codigo = Integer.parseInt(codigoStr);
+            String nome = req.getParameter("nome");
+            String precoStr = req.getParameter("preco");
+            Double preco = Double.parseDouble(precoStr);
+
+            resultado = ProdutoModel.alterar(codigo, nome, preco);
         }
         // Adiciona a variável na requisição para o JSP trabalhar.
         req.setAttribute("resultado", resultado);
