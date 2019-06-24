@@ -1,6 +1,11 @@
 package petshop.produto;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Produto {
+  @Id
   private Integer codigo;
   private String nome;
   private Double preco;
@@ -29,9 +34,14 @@ public class Produto {
     this.preco = preco;
   }
 
+  public Produto() {
+    super();
+  }
+
   public Produto(Integer codigo, String nome, Double preco) {
     this.codigo = codigo;
     this.nome = nome;
     this.preco = preco;
   }
+
 }

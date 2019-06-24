@@ -52,7 +52,8 @@ public class ProdutoController extends HttpServlet {
             String precoStr = req.getParameter("preco");
             Double preco = Double.parseDouble(precoStr);
 
-            resultado = ProdutoModel.incluir(codigo, nome, preco);
+            //resultado = ProdutoModel.incluir(codigo, nome, preco);
+            resultado = ProdutoModel.incluir(new Produto(codigo, nome, preco));
         }
         // Adiciona a variável na requisição para o JSP trabalhar.
         req.setAttribute("resultado", resultado);
@@ -74,7 +75,8 @@ public class ProdutoController extends HttpServlet {
     }
 
     private void listar(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        List produtos = ProdutoModel.listar();
+        //List produtos = ProdutoModel.listar();
+        List<Produto> produtos = ProdutoModel.listarProdutos();
         req.setAttribute("produtos", produtos);
     }
 
