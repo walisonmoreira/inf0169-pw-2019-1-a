@@ -24,6 +24,9 @@
     <maven.tomcat.path>/</maven.tomcat.path>
     <!-- Versão do Apache Derby -->
     <derby.version>10.14.2.0</derby.version>
+    <!-- Versão do Rest Easy -->
+    <!-- ATENÇÃO. Funciona com o Java 8. -->
+    <resteasy.version>3.1.4.Final</resteasy.version>
   </properties>
 
   <dependencies>
@@ -56,6 +59,17 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-c3p0</artifactId>
       <version>4.3.1.Final</version>
+    </dependency>
+    <!-- Para usar REST com JAX-RS e RestEasy. -->
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-servlet-initializer</artifactId>
+      <version>${resteasy.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-jackson-provider</artifactId>
+      <version>${resteasy.version}</version>
     </dependency>
   </dependencies>
 

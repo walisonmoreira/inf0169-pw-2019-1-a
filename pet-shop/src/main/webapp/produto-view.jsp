@@ -13,6 +13,15 @@
       $("#nome").val(nome);
       $("#preco").val(preco);
     }
+  function mostrarQtdeProdutos() {
+    //Realiza requisição REST.
+    $.ajax({
+      dataType: "json",
+      url: "./api/produtos/quantidade?maior=30"
+    }).then(function (data) {
+      alert(data.resultado + " produtos.");
+    });
+  }
   </script>
 </head>
 
@@ -33,6 +42,7 @@
                 <div class="form-group">
                     <button type="submit" name="operacao" value="incluir" class="btn btn-primary">Incluir</button>
                     <button type="submit" name="operacao" value="alterar" class="btn btn-primary">Alterar</button>
+                    <button type="button" name="qtdeProdutos" value="qtdeProdutos" class="btn btn-primary" onclick="mostrarQtdeProdutos()">Quantidade</button>
                 </div>
             </div>
         </form>
@@ -73,7 +83,7 @@
             </table>
     </div>
 
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 

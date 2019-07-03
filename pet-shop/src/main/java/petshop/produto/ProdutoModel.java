@@ -1,9 +1,6 @@
 package petshop.produto;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +69,17 @@ public class ProdutoModel {
     String jpql = "from Produto";
     TypedQuery<Produto> query = em.createQuery(jpql, Produto.class);
     List<Produto> result = query.getResultList();
+    em.close();
+    return result;
+  }
+
+  public static long qtdeProdutos(double maiorPreco) throws Exception {
+    EntityManager em = emf.createEntityManager();
+    // Não é SQL! É JPQL.
+    String jpql = "select count(p) from Produto p where p.preco >= :maiorPreco";
+    Query query = em.createQuery(jpql);
+    query.setParameter("maiorPreco", maiorPreco);
+    long result = (long) query.getSingleResult();
     em.close();
     return result;
   }
